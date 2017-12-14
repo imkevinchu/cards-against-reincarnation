@@ -20,7 +20,7 @@ describe('multi-libs', function() {
 
   function playCard(playerId) {
     var player = _.findWhere(currentGame.players, { id: playerId });
-    expect(player.isCzar).toBe(false);
+    expect(player.isLama).toBe(false);
     Game.selectCard(currentGame.id, playerId, player.cards[0]);
     currentGame = Game.getGame(gameId);
   }
@@ -68,8 +68,8 @@ describe('multi-libs', function() {
       expect(currentGame.currentBlackCard).toBeTruthy();
     });
 
-    it('player one is selected as the Card Czar', function() {
-      expect(currentGame.players[0].isCzar).toBe(true);
+    it('player one is selected as the Card Lama', function() {
+      expect(currentGame.players[0].isLama).toBe(true);
     });
 
     it('each player has 7 cards drawn', function() {
@@ -83,7 +83,7 @@ describe('multi-libs', function() {
   describe('round', function() {
     beforeEach(startGame);
 
-    describe('each player except the czar plays a card', function() {
+    describe('each player except the Lama plays a card', function() {
       beforeEach(function() {
         playCard(player2);
         playCard(player3);
@@ -94,7 +94,7 @@ describe('multi-libs', function() {
         expect(currentGame.isReadyForScoring).toBe(true);
       });
 
-      describe('card czar selects winner', function() {
+      describe('card Lama selects winner', function() {
         var cardId;
 
         beforeEach(function() {
@@ -111,8 +111,8 @@ describe('multi-libs', function() {
           expect(currentGame.isReadyForReview).toBe(true);
         });
 
-        it('player is given awesome points', function() {
-          expect(currentGame.players[1].awesomePoints).toBe(1);
+        it('player is given Karma points', function() {
+          expect(currentGame.players[1].KarmaPoints).toBe(1);
         });
 
         describe('everyone has reviewed the cards', function() {
@@ -131,11 +131,11 @@ describe('multi-libs', function() {
             currentGame = Game.getGame(gameId);
           });
 
-          it("the round is restarted with new czar", function() {
+          it("the round is restarted with new Lama", function() {
             expect(currentGame.isReadyForScoring).toBe(false);
             expect(currentGame.isReadyForReview).toBe(false);
             expect(currentGame.winningCardId).toBe(null);
-            expect(currentGame.players[1].isCzar).toBe(true);
+            expect(currentGame.players[1].isLama).toBe(true);
           });
 
           it("a new black card is selected", function() {
@@ -143,7 +143,7 @@ describe('multi-libs', function() {
             expect(currentGame.currentBlackCard).toNotBe(blackCard);
           });
 
-          it("each player (except the czar) is given a new white card", function() {
+          it("each player (except the Lama) is given a new white card", function() {
             expect(currentGame.deck.white.length).toBe(whiteCardCount - 3);
             expect(currentGame.players[0].cards.length).toBe(7);
             expect(currentGame.players[1].cards.length).toBe(7);

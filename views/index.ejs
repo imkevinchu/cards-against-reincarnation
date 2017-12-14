@@ -2,7 +2,7 @@
 <html lang="en">
    <head>
     <meta charset="utf-8">
-    <title>NodeJS Against Humanity</title>
+    <title>Cards Against Reincarnation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -30,15 +30,15 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          
+
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          
-          <a class="brand">NodeJS Against Humanity</a>
-          
+
+          <a class="brand">Cards Against Reincarnation</a>
+
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li><a href="javascript:createGame();">Create Game</a></li>
@@ -55,11 +55,11 @@
           <br />
           This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/">Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic License</a>.
           <br />
-          This site is not affliated in any way with the official Cards Against Humanities.
+          This site is not affliated in any way with the official Cards Against Humanity.
       </div>
       <hr />
       <div class="row">
-        Cards Against Humanity written in NodeJS. You need 4 players for a game to start. <a href="https://github.com/amirrajan/nodejs-against-humanity">The source is here. I accept pull requests.</a>.
+        A twist on Cards Against Humanity written in NodeJS. You need 4 players for a game to start. <a href="https://github.com/amirrajan/nodejs-against-humanity">Code forked from NodeJS Against Humanity.</a>.
       </div>
       <hr />
       <h3>Click below to join a game (or use the Create Game link at the top to start one)</h3>
@@ -78,7 +78,7 @@
     function PollForGames() {
       $('#availableGames').html('');
       GetGames();
-      setTimeout(PollForGames, 5000);   
+      setTimeout(PollForGames, 5000);
     }
 
     function GetGames(){
@@ -121,7 +121,7 @@
       }
 
       $.post("add", { id: gameId, name: name + "'s game" }, function() {
-        $.post("joingame", { gameId: gameId, playerId: playerId, playerName: name }, function() { 
+        $.post("joingame", { gameId: gameId, playerId: playerId, playerName: name }, function() {
           window.location.replace("/game?gameId=" + gameId + "&playerId=" + playerId);
         });
       });
@@ -137,5 +137,3 @@
 
   </script>
 </html>
-
-

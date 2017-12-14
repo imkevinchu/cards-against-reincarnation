@@ -25,7 +25,7 @@ function listAll() {
 function toInfo(fullGameList) {
   return _.map(fullGameList, function(game) {
     return { id: game.id, name: game.name, players: game.players.length };
-  }); 
+  });
 }
 
 function addGame(game) {
@@ -54,8 +54,8 @@ function joinGame(game, player) {
     name: player.name,
     isReady: false,
     selectedWhiteCardId: null,
-    awesomePoints: 0,
-    isCzar: false
+    KarmaPoints: 0,
+    isLama: false
   });
 
   if(game.players.length == 4) {
@@ -68,7 +68,7 @@ function joinGame(game, player) {
 function startGame(game) {
   game.isStarted = true;
   setCurrentBlackCard(game);
-  game.players[0].isCzar = true;
+  game.players[0].isLama = true;
   _.each(game.players, function(player) {
     player.cards = [];
     for(var i = 0; i < 7; i++) {
@@ -86,7 +86,7 @@ function roundEnded(game) {
   setCurrentBlackCard(game);
 
   _.each(game.players, function(player) {
-    if(!player.isCzar) {
+    if(!player.isLama) {
       removeFromArray(player.cards, player.selectedWhiteCardId);
       drawWhiteCard(game, player);
     }
@@ -95,24 +95,24 @@ function roundEnded(game) {
     player.selectedWhiteCardId = null;
   });
 
-  if(game.players[0].isCzar == true) {
-    game.players[0].isCzar = false;
-    game.players[1].isCzar = true;
+  if(game.players[0].isLama == true) {
+    game.players[0].isLama = false;
+    game.players[1].isLama = true;
     game.players[1].isReady = false;
   }
-  else if(game.players[1].isCzar == true) {
-    game.players[1].isCzar = false;
-    game.players[2].isCzar = true;
+  else if(game.players[1].isLama == true) {
+    game.players[1].isLama = false;
+    game.players[2].isLama = true;
     game.players[2].isReady = false;
   }
-  else if(game.players[2].isCzar == true) {
-    game.players[2].isCzar = false;
-    game.players[3].isCzar = true;
+  else if(game.players[2].isLama == true) {
+    game.players[2].isLama = false;
+    game.players[3].isLama = true;
     game.players[3].isReady = false;
   }
-  else if(game.players[3].isCzar == true) {
-    game.players[3].isCzar = false;
-    game.players[0].isCzar = true;
+  else if(game.players[3].isLama == true) {
+    game.players[3].isLama = false;
+    game.players[0].isLama = true;
     game.players[0].isReady = false;
   }
 }
@@ -170,9 +170,9 @@ function selectWinner(gameId, cardId) {
   var game = getGame(gameId);
   game.winningCardId = cardId;
   game.isReadyForReview = true;
-  player.awesomePoints = player.awesomePoints + 1;
+  player.KarmaPoints = player.KarmaPoints + 1;
   game.history.push({ black: game.currentBlackCard, white: cardId, winner: player.name });
-  if(player.awesomePoints == game.pointsToWin) {
+  if(player.KarmaPoints == game.pointsToWin) {
     var game = getGame(gameId);
     game.isOver = true;
     game.winnerId = player.id;
