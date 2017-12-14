@@ -15,45 +15,7 @@ Run the app:
 
 Then navigate to `http://localhost:3000`
 
-## Signing up, and deploying to Nodejitsu
-
-### Documentation
-
-The documenation was available on the front page (right under the sign up for free button): https://www.nodejitsu.com/getting-started/
-
-Install the Nodejitsu Package
-
-    npm install jitsu -g (you may need to prefix this with sudo if you're on Mac)
-
-Register via the command line:
-
-    jitsu signup (yes you can sign up via the command line)
-
-You'll get a confirmation email with a command to type in:
-
-    jitsu users confirm [username] [confirmation-guid]
-
-If you've already registered, you can login with:
-
-    jitsu login
-
-After you confirm your email, you can login (the `confirm` command should prompt you to log in).
-
-Change the `subdomain` value in `package.json`, to reflect the url you want to deploy to:
-
-    {
-      "name": "nodejs-against-humanity",
-      [...],
-      "subdomain": "nah-amir-rajan" <--- this value
-    }
-
-now deploy:
-
-    jitsu deploy
-
-And your app should be up on Nodejitsu.
-
-## Signing up, and deploying to Heroku
+## Deploying to Heroku
 
 ### Documentation
 
@@ -85,7 +47,7 @@ Open the app (same as opening it in the browser):
 
 And your app should be up on Heroku.
 
-## Signing up, and deploying to Azure
+## Deploying to Azure
 
 ### Documentation
 
@@ -103,7 +65,7 @@ From the command line, first download your publish settings (this will redirect 
 
 After the `.publishsettings` file is downloaded, you'll need to import it:
 
-    azure acount import %pathtofile%
+    azure account import %pathtofile%
 
 Next create the site, with a git backed repository:
 
