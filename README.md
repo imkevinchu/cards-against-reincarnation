@@ -3,6 +3,8 @@
 
 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/">Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic License</a>. This code is forked from <a href="https://github.com/coridrew/nodejs-against-humanity">coridrew's NodeJS Against Humanity repository</a>.
 
+This project is meant to be a lighthearted adaptation of the Cards Against Humanity concept using themes and topics explored in **REL GU4515: Reincarnation & Technology** taught by Prof. David Kittay. This Node.js implementation is meant to provide an online four-player front-end to the cards written for this project. Instructions for deploying this repository from <a href="https://github.com/coridrew/">coridrew</a>:
+
 ## Run Locally
 
 Install all the dependencies:
