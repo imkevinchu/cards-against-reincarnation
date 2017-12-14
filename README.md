@@ -1,11 +1,9 @@
 # Cards Against Reincarnation
 ###### Kevin Chu
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.0/88x31.png" /></a><br />
-
 This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/">Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic License</a>. This code is forked from <a href="https://github.com/coridrew/nodejs-against-humanity">coridrew's NodeJS Against Humanity repository</a>.
 
-##Run Locally
+## Run Locally
 
 Install all the dependencies:
 
@@ -17,9 +15,9 @@ Run the app:
 
 Then navigate to `http://localhost:3000`
 
-##Signing up, and deploying to Nodejitsu
+## Signing up, and deploying to Nodejitsu
 
-###Documentation
+### Documentation
 
 The documenation was available on the front page (right under the sign up for free button): https://www.nodejitsu.com/getting-started/
 
@@ -55,9 +53,9 @@ now deploy:
 
 And your app should be up on Nodejitsu.
 
-##Signing up, and deploying to Heroku
+## Signing up, and deploying to Heroku
 
-###Documentation
+### Documentation
 
 From heroku.com, click Documentation, then click the Getting Started button, then click Node.js from the list of options on the left...which will take you here: https://devcenter.heroku.com/articles/nodejs
 
@@ -87,9 +85,9 @@ Open the app (same as opening it in the browser):
 
 And your app should be up on Heroku.
 
-##Signing up, and deploying to Azure
+## Signing up, and deploying to Azure
 
-###Documentation
+### Documentation
 
 From windowsazure.com, click Documentation, click Developer Center, click node.js, then click the Learn More button which will take you here:
 
